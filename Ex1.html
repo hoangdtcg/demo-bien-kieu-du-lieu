@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <fieldset>
+        <legend>Student Score</legend>
+        <input id="ly" type="number" placeholder="Diem Ly">
+        <input id="hoa" type="number" placeholder="Diem Hoa">
+        <input id="sinh" type="number" placeholder="Diem Sinh">
+        <button type="button" onclick="tinhTong()">Tong</button>
+        <button type="button" onclick="tinhTB()">Trung Binh</button>
+    </fieldset>
+</form>
+<p>Tổng điểm 3 môn là :<span id="tong"></span></p>
+<p>TB điểm 3 môn là: <span id="tb"></span></p>
+<script>
+    /*let diemLy = parseInt(prompt("Nhap diem Ly"));
+    let diemHoa = +prompt("Nhap diem Hoa");
+    let diemSinh = Number(prompt("Nhap diem Sinh"));
+
+    let tong = diemLy+diemHoa+diemSinh;
+    let tb = tong/3;
+
+    alert("Tong diem 3 mon la: "+ tong.toFixed(2));
+    alert("TB diem 3 mon la: "+ tb.toFixed(2));*/
+
+
+    let diemLy = document.getElementById('ly');
+    let diemHoa = document.getElementById('hoa');
+    let diemSinh = document.getElementById('sinh');
+    let tong =0;
+    let tb = 0;
+    function tinhTong() {
+        tong = parseFloat(diemLy.value) + parseFloat(diemSinh.value) + parseFloat(diemHoa.value);
+        hienThiKq();
+    }
+
+
+    function tinhTB() {
+        tb = tong/3;
+        hienThiKq();
+
+
+    }
+
+    function hienThiKq() {
+        document.getElementById('tong').innerText = tong;
+        document.getElementById('tb').innerText = tb.toFixed(2);
+    }
+</script>
+</body>
+</html>
